@@ -1,0 +1,21 @@
+@mixin section {
+  section {
+    @include columnFlex;
+    @include table;
+
+    margin: {
+      top: 6rem;
+    }
+
+    h5 {
+      text: {
+        align: left;
+      }
+      margin: 0;
+      padding: 10px;
+      border: {
+        bottom: $w-line;
+      }
+    }
+  }
+}

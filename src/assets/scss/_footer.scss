@@ -1,0 +1,11 @@
+@mixin footer {
+  footer {
+    @include columnFlex;
+    @include centerFlex;
+
+    padding: 4rem 0;
+    border: {
+      top: $w-line;
+    }
+  }
+}

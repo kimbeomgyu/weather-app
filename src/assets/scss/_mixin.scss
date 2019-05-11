@@ -1,0 +1,24 @@
+@mixin centerFlex {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin columnFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin rowFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin setColor {
+  background-color: $bg-color;
+  color: $w-color;
+}
+
+@mixin setBody {
+  margin: 0;
+  padding: 0;
+}

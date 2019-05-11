@@ -1,0 +1,35 @@
+/*
+- 배경색 : #699dec
+- 폰트 (basic) : #fff
+- 폰트 (Dust-type section) : #32568E 
+*/
+
+@import 'values';
+@import 'mixin';
+@import 'header';
+@import 'section';
+@import 'footer';
+@import 'table';
+
+body {
+  @include setBody;
+}
+
+.App {
+  @include setColor;
+  @include columnFlex;
+  @include header;
+  @include section;
+  @include footer;
+}
+
+h2 {
+  font: {
+    size: 2rem;
+    weight: 400;
+  }
+  margin: 8px 0;
+  padding: {
+    top: 8px;
+  }
+}

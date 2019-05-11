@@ -1,0 +1,37 @@
+@mixin table {
+  tr {
+    @include rowFlex;
+
+    td {
+      text: {
+        align: left;
+      }
+      width: 100%;
+
+      p {
+        color: $dust-color;
+        margin: 0;
+        padding: {
+          top: 10px;
+          left: 10px;
+        }
+        font: {
+          weight: 400;
+        }
+      }
+
+      img {
+        padding: 24px 10px;
+      }
+
+      div {
+        @include rowFlex;
+        h2 {
+          margin: {
+            left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
