@@ -2,7 +2,7 @@ import * as moment from 'moment';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather } from '../actions/index';
+import { fetchWeather, fetchWeather2 } from '../actions/index';
 import logo from '../assets/logo.png';
 import '../assets/scss/app.css';
 import WeatherHeader from '../component/Weather_header';
@@ -12,7 +12,8 @@ import { IAppToProps, IAppToStates } from '../Type';
 class App extends React.Component<IAppToProps, IAppToStates> {
   public state = {
     data: [],
-    time: ''
+    time: '',
+    weatherData: []
   };
 
   public componentDidMount() {
@@ -31,6 +32,7 @@ class App extends React.Component<IAppToProps, IAppToStates> {
   // fetch // 미세먼지 데이터 불러오기 및 스테이트 변경
   public getData = async () => {
     await this.props.fetchWeather();
+    await this.props.fetchWeather2();
     const {
       ListAvgOfSeoulAirQualityService: {
         row: [{ PM10, PM25, OZONE, NITROGEN }]
@@ -40,9 +42,9 @@ class App extends React.Component<IAppToProps, IAppToStates> {
       { name1: '미세먼지', name2: '초미세먼지', value1: PM10, value2: PM25 },
       { name1: '오존', name2: '이산화질소', value1: OZONE, value2: NITROGEN }
     ];
-
+    const weatherData = this.props.weather2;
     const time = this.getTime();
-    this.setState({ data, time });
+    this.setState({ data, time, weatherData });
   };
 
   public render() {
@@ -51,6 +53,7 @@ class App extends React.Component<IAppToProps, IAppToStates> {
       this.props.weather.length !== 0 && (
         <div className="App">
           <WeatherHeader />
+          {JSON.stringify(this.state.weatherData)}
           <WeatherMain time={time} data={data} />
           <footer>
             <img src={logo} />
@@ -61,12 +64,18 @@ class App extends React.Component<IAppToProps, IAppToStates> {
   }
 }
 
-function mapStateToProps({ weather }: { weather: any }) {
-  return { weather };
+function mapStateToProps({
+  weather,
+  weather2
+}: {
+  weather: any;
+  weather2: any;
+}) {
+  return { weather, weather2 };
 }
 
 function mapDispatchToProps(dispatch: any) {
-  return bindActionCreators({ fetchWeather }, dispatch);
+  return bindActionCreators({ fetchWeather, fetchWeather2 }, dispatch);
 }
 
 export default connect(

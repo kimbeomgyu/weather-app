@@ -13,8 +13,11 @@ export interface ITableToProps {
 export interface IAppToStates {
   data: IDataType[];
   time?: string;
+  weatherData?: any;
 }
 export interface IAppToProps {
   weather: any;
+  weather2: any;
   fetchWeather: any;
+  fetchWeather2: any;
 }

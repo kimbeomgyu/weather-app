@@ -8,9 +8,17 @@ function WeatherReducer(state = [], action: ActionTypes) {
   }
   return state;
 }
+function WeatherReducer2(state = [], action: ActionTypes) {
+  switch (action.type) {
+    case ActionKeys.FETCH_WEATHER2:
+      return [action.payload.data, ...state];
+  }
+  return state;
+}
 
 const reducers = combineReducers({
-  weather: WeatherReducer
+  weather: WeatherReducer,
+  weather2: WeatherReducer2
 });
 
 export default reducers;
