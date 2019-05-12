@@ -3,10 +3,10 @@
     @include rowFlex;
 
     td {
+      width: 100%;
       text: {
         align: left;
       }
-      width: 100%;
 
       p {
         color: $dust-color;
