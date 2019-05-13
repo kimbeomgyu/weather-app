@@ -12,7 +12,6 @@
         color: $dust-color;
         margin: 0;
         padding: {
-          top: 10px;
           left: 10px;
         }
         font: {
@@ -21,14 +20,26 @@
       }
 
       img {
-        padding: 24px 10px;
+        padding: 10px {
+          left: 0;
+          right: 2px;
+        }
+        margin: {
+          top: 4px;
+          bottom: 24px;
+          left: 10px;
+          right: 0;
+        }
       }
 
       div {
         @include rowFlex;
         h2 {
           margin: {
+            top: -10px;
+            bottom: 14px;
             left: 10px;
+            right: 0;
           }
         }
       }

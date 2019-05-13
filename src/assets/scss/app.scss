@@ -3,7 +3,7 @@
 - 폰트 (basic) : #fff
 - 폰트 (Dust-type section) : #32568E 
 */
-
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 @import 'values';
 @import 'mixin';
 @import 'header';
@@ -16,6 +16,7 @@ body {
 }
 
 .App {
+  font-family: 'Noto Sans KR', sans-serif;
   @include setColor;
   @include columnFlex;
   @include header;

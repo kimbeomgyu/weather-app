@@ -6,7 +6,7 @@ import AirTable from '../containers/Weather_main';
 const WeatherSection: Component = () => {
   return (
     <section>
-      <h5>{`오늘 ${getTime()}요일`}</h5>
+      <h4>{`오늘 ${getTime()}요일`}</h4>
       <AirTable />
     </section>
   );

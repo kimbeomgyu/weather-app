@@ -9,7 +9,7 @@
         weight: 400;
       }
       margin: {
-        bottom: 4rem;
+        bottom: 3rem;
       }
     }
 
@@ -20,8 +20,9 @@
     }
 
     img {
+      @include move;
       margin: {
-        bottom: 4rem;
+        bottom: 3rem;
       }
     }
   }

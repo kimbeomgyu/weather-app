@@ -10,11 +10,13 @@
       top: 6rem;
     }
 
-    h5 {
+    h4 {
       text: {
         align: left;
       }
-      margin: 0;
+      margin: 0 {
+        bottom: 10px;
+      }
       padding: 10px;
       border: {
         bottom: $w-line;

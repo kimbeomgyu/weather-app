@@ -22,3 +22,21 @@
   margin: 0;
   padding: 0;
 }
+
+@mixin move {
+  animation-name: move;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: none;
+
+  @keyframes move {
+    from {
+      transform: translate(20px);
+    }
+    to {
+      transform: translate(-20px);
+    }
+  }
+}
