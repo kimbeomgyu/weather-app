@@ -3,7 +3,7 @@ import { StatelessComponent as Component } from 'react';
 import good from '../assets/icon/icon-good.png';
 import { ITableToProps } from '../Type';
 
-const TableValue: Component<ITableToProps> = ({ name, value }) => (
+const Table: Component<ITableToProps> = ({ name, value }) => (
   <td>
     <p>{name}</p>
     <div>
@@ -13,4 +13,4 @@ const TableValue: Component<ITableToProps> = ({ name, value }) => (
   </td>
 );
 
-export default TableValue;
+export default Table;

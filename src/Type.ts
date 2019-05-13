@@ -1,3 +1,4 @@
+//
 export interface IDataType {
   name1: string;
   name2: string;
@@ -5,28 +6,28 @@ export interface IDataType {
   value2: number;
 }
 
+export interface IIconType {
+  icon: string;
+}
+
 export interface ITableToProps {
   name: string;
   value: number;
 }
 
-export interface IAppToStates {
-  data: IDataType[];
-  icon?: string;
-  time?: string;
-  temp?: number;
-  description?: string;
+export interface IWeatherToProps {
+  airPollution?: any;
+  cityWeather?: any;
+  weather?: any;
+  air?: any;
 }
 
-export interface IAppToProps {
-  air: any;
-  weather: any;
-  airPollution: any;
-  cityWeather: any;
-}
-
-export interface IWHToProps {
+export interface IWHToState {
   temp: number;
   icon: string;
   description: string;
+}
+
+export interface IWMToState {
+  data: IDataType[];
 }

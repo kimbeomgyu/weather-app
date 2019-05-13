@@ -5,8 +5,9 @@ import mist from '../assets/icon/icon-mist.png';
 import rain from '../assets/icon/icon-rain.png';
 import snow from '../assets/icon/icon-snow.png';
 import sun from '../assets/icon/icon-sun.png';
+import { IIconType } from '../Type';
 
-const WeatherIcon: Component<{ icon: string }> = ({ icon }) => (
+const WeatherIcon: Component<IIconType> = ({ icon }) => (
   <img src={Icon(icon.slice(0, 2))} />
 );
 
