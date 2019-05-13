@@ -1,24 +1,24 @@
 import { combineReducers } from 'redux';
 import { ActionKeys, ActionTypes } from '../actions/index';
 
-function WeatherReducer(state = [], action: ActionTypes) {
+function AirPollutionReducer(state = [], action: ActionTypes) {
   switch (action.type) {
-    case ActionKeys.FETCH_WEATHER:
+    case ActionKeys.FETCH_AIR_POLLUTION:
       return [action.payload.data, ...state];
   }
   return state;
 }
-function WeatherReducer2(state = [], action: ActionTypes) {
+function CityWeatherReducer(state = [], action: ActionTypes) {
   switch (action.type) {
-    case ActionKeys.FETCH_WEATHER2:
+    case ActionKeys.FETCH_CITY_WEATHER:
       return [action.payload.data, ...state];
   }
   return state;
 }
 
 const reducers = combineReducers({
-  weather: WeatherReducer,
-  weather2: WeatherReducer2
+  air: AirPollutionReducer,
+  weather: CityWeatherReducer
 });
 
 export default reducers;

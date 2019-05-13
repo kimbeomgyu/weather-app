@@ -19,10 +19,10 @@ export interface IAppToStates {
 }
 
 export interface IAppToProps {
+  air: any;
   weather: any;
-  weather2: any;
-  fetchWeather: any;
-  fetchWeather2: any;
+  airPollution: any;
+  cityWeather: any;
 }
 
 export interface IWHToProps {

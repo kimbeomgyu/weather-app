@@ -3,7 +3,8 @@ import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather, fetchWeather2 } from '../actions/index';
+import airPollution from '../actions/air_pollution';
+import cityWeather from '../actions/city_weather';
 import logo from '../assets/logo.png';
 import '../assets/scss/app.css';
 import WeatherHeader from '../component/Weather_header';
@@ -34,13 +35,13 @@ class App extends Component<IAppToProps, IAppToStates> {
 
   // fetch // 미세먼지 데이터 불러오기 및 스테이트 변경
   public getData = async () => {
-    await this.props.fetchWeather();
-    await this.props.fetchWeather2();
+    await this.props.airPollution();
+    await this.props.cityWeather();
     const {
       ListAvgOfSeoulAirQualityService: {
         row: [{ PM10, PM25, OZONE, NITROGEN }]
       }
-    } = this.props.weather[0];
+    } = this.props.air[0];
     const data = [
       { name1: '미세먼지', name2: '초미세먼지', value1: PM10, value2: PM25 },
       { name1: '오존', name2: '이산화질소', value1: OZONE, value2: NITROGEN }
@@ -48,7 +49,7 @@ class App extends Component<IAppToProps, IAppToStates> {
     const {
       main: { temp },
       weather: [{ description, icon }]
-    } = this.props.weather2[0];
+    } = this.props.weather[0];
     const time = this.getTime();
     this.setState({ data, time, temp, description, icon });
   };
@@ -72,18 +73,12 @@ class App extends Component<IAppToProps, IAppToStates> {
   }
 }
 
-function mapStateToProps({
-  weather,
-  weather2
-}: {
-  weather: any;
-  weather2: any;
-}) {
-  return { weather, weather2 };
+function mapStateToProps({ air, weather }: { air: any; weather: any }) {
+  return { air, weather };
 }
 
 function mapDispatchToProps(dispatch: any) {
-  return bindActionCreators({ fetchWeather, fetchWeather2 }, dispatch);
+  return bindActionCreators({ airPollution, cityWeather }, dispatch);
 }
 
 export default connect(
