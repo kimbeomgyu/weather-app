@@ -12,12 +12,21 @@ export interface ITableToProps {
 
 export interface IAppToStates {
   data: IDataType[];
+  icon?: string;
   time?: string;
-  weatherData?: any;
+  temp?: number;
+  description?: string;
 }
+
 export interface IAppToProps {
   weather: any;
   weather2: any;
   fetchWeather: any;
   fetchWeather2: any;
+}
+
+export interface IWHToProps {
+  temp: number;
+  icon: string;
+  description: string;
 }

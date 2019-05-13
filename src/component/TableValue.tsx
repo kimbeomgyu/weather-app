@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StatelessComponent } from 'react';
+import { StatelessComponent as Component } from 'react';
 import good from '../assets/icon/icon-good.png';
 import { ITableToProps } from '../Type';
 
-const TableValue: StatelessComponent<ITableToProps> = ({ name, value }) => (
+const TableValue: Component<ITableToProps> = ({ name, value }) => (
   <td>
     <p>{name}</p>
     <div>

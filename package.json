@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react-redux": "^7.0.8",
+    "@types/redux-promise": "^0.5.28",
     "axios": "^0.18.0",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",

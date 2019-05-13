@@ -1,14 +1,17 @@
 import * as React from 'react';
-import { StatelessComponent } from 'react';
-import mist from '../assets/icon/icon-mist.png';
+import { StatelessComponent as Component } from 'react';
+import { IWHToProps } from '../Type';
+import WeatherIcon from './Weather_icon';
 
-const WeatherHeader: StatelessComponent = () => (
-  <header>
-    <h1>서울</h1>
-    <img src={mist} />
-    <h2>11.25℃</h2>
-    <h2>안개</h2>
-  </header>
-);
+const WeatherHeader: Component<IWHToProps> = ({ temp, description, icon }) => {
+  return (
+    <header>
+      <h1>서울</h1>
+      <WeatherIcon icon={icon} />
+      <h2>{(temp - 273.15).toFixed(1)}℃</h2>
+      <h2>{description}</h2>
+    </header>
+  );
+};
 
 export default WeatherHeader;

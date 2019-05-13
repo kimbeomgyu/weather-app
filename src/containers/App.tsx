@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import * as React from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather, fetchWeather2 } from '../actions/index';
@@ -9,11 +10,13 @@ import WeatherHeader from '../component/Weather_header';
 import WeatherMain from '../component/Weather_main';
 import { IAppToProps, IAppToStates } from '../Type';
 
-class App extends React.Component<IAppToProps, IAppToStates> {
+class App extends Component<IAppToProps, IAppToStates> {
   public state = {
     data: [],
-    time: '',
-    weatherData: []
+    description: '',
+    icon: '',
+    temp: 0,
+    time: ''
   };
 
   public componentDidMount() {
@@ -42,25 +45,30 @@ class App extends React.Component<IAppToProps, IAppToStates> {
       { name1: '미세먼지', name2: '초미세먼지', value1: PM10, value2: PM25 },
       { name1: '오존', name2: '이산화질소', value1: OZONE, value2: NITROGEN }
     ];
-    const weatherData = this.props.weather2;
+    const {
+      main: { temp },
+      weather: [{ description, icon }]
+    } = this.props.weather2[0];
     const time = this.getTime();
-    this.setState({ data, time, weatherData });
+    this.setState({ data, time, temp, description, icon });
   };
 
   public render() {
-    const { time, data } = this.state;
-    return (
-      this.props.weather.length !== 0 && (
+    const { time, data, temp, description, icon } = this.state;
+
+    if (data.length === 0) {
+      return <div>Loading....</div>;
+    } else {
+      return (
         <div className="App">
-          <WeatherHeader />
-          {JSON.stringify(this.state.weatherData)}
+          <WeatherHeader temp={temp} description={description} icon={icon} />
           <WeatherMain time={time} data={data} />
           <footer>
             <img src={logo} />
           </footer>
         </div>
-      )
-    );
+      );
+    }
   }
 }
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { StatelessComponent } from 'react';
+import { StatelessComponent as Component } from 'react';
 import AirTable from '../component/AirTable';
 import { IAppToStates } from '../Type';
 
-const WeatherMain: StatelessComponent<IAppToStates> = ({ time, data }) => {
+const WeatherMain: Component<IAppToStates> = ({ time, data }) => {
   return (
     <section>
       <h5>{`오늘 ${time}요일`}</h5>

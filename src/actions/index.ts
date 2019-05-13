@@ -33,7 +33,7 @@ export function fetchWeather() {
   };
 }
 export function fetchWeather2() {
-  const url = `${ROOT_URL2}weather?id=${CITY_ID}&appid=${API_KEY2}`;
+  const url = `${ROOT_URL2}weather?id=${CITY_ID}&appid=${API_KEY2}&lang=kr`;
   const request = axios.get(url);
 
   return {
