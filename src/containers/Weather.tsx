@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import airPollution from '../actions/air_pollution';
 import cityWeather from '../actions/city_weather';
-import '../assets/scss/app.css';
 import WeatherFooter from '../component/Weather_footer';
 import WeatherSection from '../component/Weather_section';
 import { IWeatherToProps } from '../Type';
