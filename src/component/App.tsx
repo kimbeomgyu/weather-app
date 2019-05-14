@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import '../assets/scss/app.css';
+import '../assets/css/app.css';
 import Weather from '../containers/Weather';
 
 class App extends Component {
