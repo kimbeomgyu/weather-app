@@ -13,11 +13,25 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #699dec;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   .App header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
     justify-content: center;
     align-items: center; }
     .App header h1 {
@@ -27,6 +41,11 @@ body {
     .App header h2 {
       padding-top: 0; }
     .App header img {
+      -webkit-animation-name: move;
+      -webkit-animation-duration: 3s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-fill-mode: none;
       animation-name: move;
       animation-duration: 3s;
       animation-iteration-count: infinite;
@@ -35,44 +54,61 @@ body {
       animation-fill-mode: none;
       margin-bottom: 3rem; }
 
-@keyframes move {
+@-webkit-keyframes move {
   from {
+    -webkit-transform: translate(20px);
     transform: translate(20px); }
   to {
+    -webkit-transform: translate(-20px);
+    transform: translate(-20px); } }
+
+@keyframes move {
+  from {
+    -webkit-transform: translate(20px);
+    transform: translate(20px); }
+  to {
+    -webkit-transform: translate(-20px);
     transform: translate(-20px); } }
   .App section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin-top: 6rem; }
     .App section table {
       width: 100%; }
-      .App section table tr {
-        display: flex;
-        flex-direction: row; }
-        .App section table tr td {
-          width: 100%;
-          text-align: left; }
-          .App section table tr td p {
-            color: #32568e;
-            margin: 0;
-            padding-left: 10px;
-            font-weight: 400; }
-          .App section table tr td img {
-            padding: 10px;
-              padding-left: 0;
-              padding-right: 2px;
-            margin-top: 4px;
-            margin-bottom: 24px;
+      .App section table tr td {
+        width: 50%;
+        text-align: left; }
+        .App section table tr td p {
+          color: #32568e;
+          margin: 0;
+          padding-left: 10px;
+          font-weight: 400; }
+        .App section table tr td img {
+          padding: 10px;
+            padding-left: 0;
+            padding-right: 2px;
+          margin-top: 4px;
+          margin-bottom: 24px;
+          margin-left: 10px;
+          margin-right: 0; }
+        .App section table tr td div {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row; }
+          .App section table tr td div h2 {
+            margin-top: -10px;
+            margin-bottom: 14px;
             margin-left: 10px;
             margin-right: 0; }
-          .App section table tr td div {
-            display: flex;
-            flex-direction: row; }
-            .App section table tr td div h2 {
-              margin-top: -10px;
-              margin-bottom: 14px;
-              margin-left: 10px;
-              margin-right: 0; }
     .App section h4 {
       text-align: left;
       margin: 0;
@@ -80,8 +116,17 @@ body {
       padding: 10px;
       border-bottom: 1px solid #fff; }
   .App footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;

@@ -1,18 +1,31 @@
-@mixin centerFlex {
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin columnFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 @mixin rowFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
+@mixin centerFlex {
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  align-items: center;
+}
 @mixin setColor {
   background-color: $bg-color;
   color: $w-color;
@@ -24,6 +37,11 @@
 }
 
 @mixin move {
+  -webkit-animation-name: move;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: none;
   animation-name: move;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -31,11 +49,24 @@
   animation-direction: alternate-reverse;
   animation-fill-mode: none;
 
-  @keyframes move {
+  @-webkit-keyframes move {
     from {
+      -webkit-transform: translate(20px);
       transform: translate(20px);
     }
     to {
+      -webkit-transform: translate(-20px);
+      transform: translate(-20px);
+    }
+  }
+
+  @keyframes move {
+    from {
+      -webkit-transform: translate(20px);
+      transform: translate(20px);
+    }
+    to {
+      -webkit-transform: translate(-20px);
       transform: translate(-20px);
     }
   }
