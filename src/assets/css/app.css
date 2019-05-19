@@ -137,3 +137,11 @@ h2 {
   font-weight: 400;
   margin: 8px 0;
   padding-top: 8px; }
+
+a {
+  padding-left: 10px;
+  color: #fff;
+  text-decoration: none; }
+  a:visited, a:hover, a:focus, a:hover, a:active {
+    text-decoration: none;
+    color: #fff; }

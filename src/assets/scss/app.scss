@@ -34,3 +34,17 @@ h2 {
     top: 8px;
   }
 }
+
+a {
+  padding-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  &:visited,
+  &:hover,
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #fff;
+  }
+}

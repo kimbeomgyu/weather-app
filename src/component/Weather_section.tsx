@@ -1,12 +1,16 @@
 import * as moment from 'moment';
 import * as React from 'react';
 import { StatelessComponent as Component } from 'react';
+import { Link } from 'react-router-dom';
 import AirTable from '../containers/Weather_main';
 
 const WeatherSection: Component = () => {
   return (
     <section>
-      <h4>{`오늘 ${getTime()}요일`}</h4>
+      <h4>
+        {`오늘 ${getTime()}요일`}
+        <Link to={'/test'} children="서울" />
+      </h4>
       <AirTable />
     </section>
   );
