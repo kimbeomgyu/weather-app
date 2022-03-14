@@ -1,4 +1,4 @@
-import { ActionKeys, ActionTypes } from '../actions/index';
+import { ActionKeys, ActionTypes } from "../actions/index";
 
 function CityWeatherReducer(state = [], action: ActionTypes) {
   switch (action.type) {

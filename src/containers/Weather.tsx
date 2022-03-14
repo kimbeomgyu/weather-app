@@ -1,13 +1,13 @@
-import * as React from 'react';
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import airPollution from '../actions/air_pollution';
-import cityWeather from '../actions/city_weather';
-import WeatherFooter from '../component/Weather_footer';
-import WeatherSection from '../component/Weather_section';
-import { IWeatherToProps } from '../Type';
-import WeatherHeader from './Weather_header';
+import * as React from "react";
+import { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import airPollution from "../actions/air_pollution";
+import cityWeather from "../actions/city_weather";
+import WeatherFooter from "../component/Weather_footer";
+import WeatherSection from "../component/Weather_section";
+import { IWeatherToProps } from "../Type";
+import WeatherHeader from "./Weather_header";
 
 class Weather extends Component<IWeatherToProps> {
   public componentDidMount() {
@@ -33,6 +33,7 @@ class Weather extends Component<IWeatherToProps> {
 }
 
 function mapStateToProps({ air, weather }: IWeatherToProps) {
+  console.log(air, weather);
   return { air, weather };
 }
 
@@ -40,7 +41,4 @@ function mapDispatchToProps(dispatch: any) {
   return bindActionCreators({ airPollution, cityWeather }, dispatch);
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Weather);
+export default connect(mapStateToProps, mapDispatchToProps)(Weather);

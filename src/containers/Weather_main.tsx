@@ -1,21 +1,21 @@
-import * as React from 'react';
-import { StatelessComponent as Component } from 'react';
-import { connect } from 'react-redux';
-import TableValue from '../component/Table';
-import { IDataType, IWeatherToProps } from '../Type';
+import * as React from "react";
+import { FC } from "react";
+import { connect } from "react-redux";
+import TableValue from "../component/Table";
+import { IDataType, IWeatherToProps } from "../Type";
 
-const WeatherMain: Component<IWeatherToProps> = ({
+const WeatherMain: FC<IWeatherToProps> = ({
   air: [
     {
       ListAvgOfSeoulAirQualityService: {
-        row: [{ PM10, PM25, OZONE, NITROGEN }]
-      }
-    }
-  ]
+        row: [{ PM10, PM25, OZONE, NITROGEN }],
+      },
+    },
+  ],
 }) => {
   const data = [
-    { name1: '미세먼지', name2: '초미세먼지', value1: PM10, value2: PM25 },
-    { name1: '오존', name2: '이산화질소', value1: OZONE, value2: NITROGEN }
+    { name1: "미세먼지", name2: "초미세먼지", value1: PM10, value2: PM25 },
+    { name1: "오존", name2: "이산화질소", value1: OZONE, value2: NITROGEN },
   ];
 
   return (

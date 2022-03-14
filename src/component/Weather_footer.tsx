@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { StatelessComponent as Component } from 'react';
-import logo from '../assets/logo.png';
+import * as React from "react";
+import { FC } from "react";
+import logo from "../assets/logo.png";
 
-const WeatherFooter: Component = () => (
+const WeatherFooter: FC = () => (
   <footer>
     <img src={logo} />
   </footer>

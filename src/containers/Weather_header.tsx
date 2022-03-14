@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { StatelessComponent as Component } from 'react';
-import { connect } from 'react-redux';
-import WeatherIcon from '../component/Weather_icon';
-import { IWeatherToProps } from '../Type';
+import * as React from "react";
+import { FC } from "react";
+import { connect } from "react-redux";
+import WeatherIcon from "../component/Weather_icon";
+import { IWeatherToProps } from "../Type";
 
-const WeatherHeader: Component<IWeatherToProps> = ({
+const WeatherHeader: FC<IWeatherToProps> = ({
   weather: [
     {
       main: { temp },
-      weather: [{ description, icon }]
-    }
-  ]
+      weather: [{ description, icon }],
+    },
+  ],
 }) => {
   return (
     <header>

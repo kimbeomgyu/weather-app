@@ -1,15 +1,13 @@
-import * as React from 'react';
-import { StatelessComponent as Component } from 'react';
-import cloud from '../assets/icon/icon-cloud.png';
-import mist from '../assets/icon/icon-mist.png';
-import rain from '../assets/icon/icon-rain.png';
-import snow from '../assets/icon/icon-snow.png';
-import sun from '../assets/icon/icon-sun.png';
-import { IIconType } from '../Type';
+import * as React from "react";
+import { FC } from "react";
+import cloud from "../assets/icon/icon-cloud.png";
+import mist from "../assets/icon/icon-mist.png";
+import rain from "../assets/icon/icon-rain.png";
+import snow from "../assets/icon/icon-snow.png";
+import sun from "../assets/icon/icon-sun.png";
+import { IIconType } from "../Type";
 
-const WeatherIcon: Component<IIconType> = ({ icon }) => (
-  <img src={Icon(icon.slice(0, 2))} />
-);
+const WeatherIcon: FC<IIconType> = ({ icon }) => <img src={Icon(icon.slice(0, 2))} />;
 
 function Icon(icon: string) {
   switch (icon) {

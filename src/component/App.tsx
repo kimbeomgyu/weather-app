@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Component } from 'react';
-import '../assets/css/app.css';
-import Weather from '../containers/Weather';
+import * as React from "react";
+import { Component } from "react";
+import "../assets/css/app.css";
+import Weather from "../containers/Weather";
 
 class App extends Component {
   public render() {
